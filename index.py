@@ -1,4 +1,5 @@
 from datetime import datetime
+from matplotlib import pyplot as plt
 
 f = open('textData.txt')
 documentData = f.read()
@@ -54,3 +55,14 @@ print('Массив среднесуточного давления')
 print(middle)
 print('Массив скользящего среднего давления')
 print(EMAmiddle)
+
+
+plt.plot(dateArr, middle, '.-b', lw = 1, color='red')
+plt.plot(dateArr, EMAmiddle, lw = 1, color='blue')
+
+plt.xlabel('Дата')
+plt.ylabel('Давление')
+
+plt.show()
+
+
